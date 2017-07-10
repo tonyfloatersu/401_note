@@ -171,5 +171,60 @@ $\begin{align}\text{Cov}(W,Z) = E[WZ] = \frac {\text {Cov}(X, Y)}{\sqrt{(Var X)(
 
 -   $|\rho_{XY}| = 1 \Leftrightarrow Y = \beta_0 + \beta_1X$ for some $\beta_0, \beta_1 \in \mathbb R, \beta_1 \neq 0$ almost surely
 
-    ​
+    -   Suppose $Y = \beta_0 + \beta_1 X$ for some $\beta_0, \beta_1 \in \mathbb R, \beta_1 \ne 0$.
 
+        Then $\text{Cov} (X,Y) = E[(X - E[X])(Y - E[Y])] = E[\beta_1(X - E[X])^2] = \beta_1 Var X$
+
+        Thus $\begin{align}\rho^2_{XY} = \frac{\text{Cov}(X, \beta_0+\beta_1 X)^2}{Var(\beta_0+\beta_1X) Var X} = 1\end{align}$
+
+    -   Let $\rho^2_{XY} = 1$, then we reverse the steps to get $\begin{align} -\frac {E[WZ]^2}{E[W^2]} +E[Z^2] = 0 \Leftrightarrow E[(aW - X)^2] = 0 \end{align}$
+
+        thus $aW - X = 0$ almost surely, then we derive $Y = (\mu_Y-a\mu_X) + aX$ almost surely.
+
+<div style="page-break-after: always;"></div>
+
+### Remark on Correlation Coefficient
+
+-   The correlation coefficient will be 0 if $X$ and $Y$ are independent, but non-independent $X, Y$ can also be $\rho_{XY} = 0$.
+
+-   The correlation makes a statement on the expected value of the product of the normalized variables $W \cdot Z$.
+
+    (check the $\text{Cov} (X, Y) = E[XY] - E[X]E[Y] = E[(X-\mu_X)(Y-\mu_Y)] = E[WZ]$)
+
+    If $\rho_{XY} = 0$, then the expected value of the product is zero.
+
+### Bivariate Normal Distribution
+
+$\begin{align}f_{XY}(x,y) = \frac 1 {2\pi \sigma_X \sigma _Y\sqrt{1-\rho^2}} e^{-\frac 1 {2(1-\rho^2)} [(\frac {x-\mu_X}{\sigma_X})^2 - 2\rho (\frac {x-\mu_X}{\sigma_X}) (\frac {y-\mu_Y}{\sigma_Y}) + (\frac {y-\mu_Y}{\sigma_Y})^2]} \end{align}$ where $-1 < \rho < 1$.
+
+-   $\mu_X = E[X]$
+-   $\sigma_X^2 = Var X$
+-   $\rho = \rho_{XY}$ is the correlation coefficient of $X$ and $Y$, $\rho = 0$ iff $X$ and $Y$ are independent.
+-   $E[Y|x] = \mu_Y + \rho \frac {\sigma_Y}{\sigma_X}(x - \mu_X)$, if normalized, then $f_{XY}(x, y) = \frac 1{2\pi\sqrt{1-\rho^2}} e^{-\frac {x^2-2\rho x y + y^2}{2(1-\rho^2)}}$ and the $E[Y|x] = \rho \cdot x$.
+
+### Transformation of Variables
+
+#### Theorem 1
+
+-   $((X, Y), f_{XY})$ be continuous bivariate random variable
+
+-   $H: \mathbb R^2 \to \mathbb R ^2$ be a differentiable bijective map with inverse $H^{-1}$
+
+-   $(U,V) = H \circ (X, Y)$ is a continuous bivariate random variable with density
+
+    $f_{UV}(u, v) = f_{XY} \circ H^{-1} (u, v) \cdot |\det DH^{-1}(u,v)|$
+
+    where $DH^{-1}$ is the Jacobian of $H^{-1}$.
+
+#### Theorem 2
+
+-   $((X, Y), f_{XY})$ be continuous bivariate random variable
+-   $U=X/Y$
+-   then the density $f_U$ of $U$ is given by $\begin{align}f_U(u) = \int ^\infty_{-\infty} f_{XY}(uv, v) \cdot |v| dv\end{align}$
+
+##### Proof
+
+-   Let $H: (X, Y) \to (U, V)$, with $H(x, y) = (x/y, y)^T$ and $H^{-1}(u, v) = (uv, v)^T$
+-   $DH ^{-1}(u, v) = \begin{pmatrix} \frac {\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}   \end{pmatrix} =  \begin{pmatrix} v & u\\ 0 & 1   \end{pmatrix}$
+-   $|\det DH^{-1}(u,v)| = |v|$
+-   Then integrate along $v$ can get the density $f_U$.
