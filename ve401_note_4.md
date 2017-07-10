@@ -90,8 +90,7 @@ $\begin{align} Var(X + Y) &= E[((X + Y) - E[X+Y])^2] \\&= E[(X+Y)^2 - 2(X+Y)E[X+
 
 #### Definition
 
--   $((X, Y), f_{XY})$ be a bivariate random variable
--   $\mu_X = E[X]$
+-   $((X, Y), f_{XY})$ be a bivariate random variable and $\mu_X = E[X]$
 -   Covariance of $(X, Y)$ is $\text{Cov} (X, Y) = \sigma_{XY} = E[(X-\mu_X)(Y-\mu_Y)]$
 -   We can see $\text {Cov } (X, Y) = E[XY] - E[X]E[Y]$
 -   $\text{Cov}(X, X) = Var X$
@@ -100,4 +99,77 @@ $\begin{align} Var(X + Y) &= E[((X + Y) - E[X+Y])^2] \\&= E[(X+Y)^2 - 2(X+Y)E[X+
 
 -   $((X, Y), f_{XY})$ be bivariate random variable
 -   $\text{Cov} (X, Y) = 0$, $E[XY] = E[X] E[Y]$
+
+
+### Application to the Hypergeometric Distribution
+
+-   selecting $n$ items
+-   $N$ objects
+-   $r$ of which have certain property we want.
+-   $X$ is the hypergeometric random variable of $r$ items drawn.
+
+We donate $X = \sum ^n_{i=1} X_i$, where $X_i$ is a Bernoulli random variable for a single draw.
+
+We donate the probability of success by $p_k$.
+
+$X_k$ are neither **identically distributed** nor **independent**.
+
+Random vector $(X_1, X_2, \cdots, X_n)$.
+
+Since we can see from sample space $S$ that we have $N!$ permutations, then the $p_k$ probability does not depend on $k$ since all the possible permutation is listed.
+
+Thus $\begin{align}p_k = p_1 = \frac r N\end{align}$, $\begin{align}E[X] = E[\sum^n_{k=1}X_k] = \sum^n_{k=1}E[X_k] = n\frac rN\end{align}$.
+
+Then $\begin{align}Var X = Var (\sum^n_{k=1} X_k) = \sum ^n_{k=1} VarX_k + 2\sum_{i<j}\text{Cov}(X_i, X_j)\end{align}$
+
+Since $\text{Cov}(X_i, X_j) = E[X_i X_j] - E[X_i] E[X_j]$
+
+$\begin{align}E[X_i X_j] = p_{ij} := P[X_i = 1 \text{ and } X_j = 1] = \frac r N \cdot \frac {r-1} {N-1}\end{align}$
+
+thus $\begin{align}\text{Cov}(X_i, X_j) = \frac r N \cdot \frac {r-1} {N-1} - (\frac {r}{N})^2 = -\frac 1 N \cdot \frac {r(N-r)}{N(n-1)} \end{align}$
+
+$\begin{align}Var X = E[X^2] - E[X]^2\end{align}$, since $\begin{align}E[X_i \text{ and } X_i] = \frac r N\end{align}$, thus $\begin{align}Var X_i = \frac r N(1-\frac r N)\end{align}$.
+
+Thus $\begin{align}Var X = n Var X_i + 2 \frac {n(n-1)}{2} \text{Cov}(X_i, X_j) = n\frac r N \frac {N-r} N \frac {N-n}{N-1}\end{align}$
+
+<div style="page-break-after: always;"></div>
+
+### Quantifying Dependence
+
+#### Normalize X and Y
+
+$\begin{align} W = \frac {X - \mu _X }{\sigma _X} \end{align}$ and $\begin{align}Z = \frac {Y - \mu_Y}{\sigma _ Y}\end{align}$
+
+So $E[W] = E[Z] = 0$, $Var W = Var Z = 1$.
+
+$\begin{align}\text{Cov}(W,Z) = E[WZ] = \frac {\text {Cov}(X, Y)}{\sqrt{(Var X)(Var Y)}} \end{align}$
+
+#### Pearson Coefficient of Correlation Definition
+
+-   $((X, Y), f_{XY})$ be bivariate random variable
+-   $Var X$ and $Var Y$ are not 0
+-   $\begin{align}\rho_{XY} = \frac {\text {Cov}(X, Y)}{\sqrt{(Var X)(Var Y)}} \end{align}$
+-   if $\rho_{XY} = 0$, then $X$ and $Y$ are **uncorrelated**, otherwise they are **correlated**.
+
+### Cauchy-Schwartz Inequality
+
+-   $((X, Y), f_{XY})$ be bivariate random variable
+-   correlation coefficient $\rho_{XY}$
+-   $-1 \leq \rho_{XY} \leq 1$
+-   $|\rho_{XY} | = 1$ iff there exist $\beta_0, \beta_1 \in \mathbb{R}, \beta_1 \neq 0$ such that $Y = \beta_0 + \beta_1 X$ almost surely.
+
+#### Proof
+
+-   $-1 \leq \rho _{XY} \leq 1$
+
+    We let $E[W^2], E[Z^2] \neq 0$, then $(a W - Z)^2\geq 0$, so $0 \leq E[(aW-Z)^2] = a^2E[W^2]-2aE[WZ] + E[Z^2]$.
+
+    Let $\begin{align}a = -\frac{E[WZ]}{E[W^2]} \end{align}$, then we get $\begin{align} -\frac{E[WZ]^2}{E[W^2]} + E[Z^2] \geq 0  \Leftrightarrow \frac {E[WZ]^2}{E[W^2]E[Z^2]} \leq 1 \end{align}$
+
+
+    Let $X - \mu_X  = W$ and $Y-\mu_Y = Z$, then $\begin{align} \frac{E[(X-\mu_X)(Y-\mu_Y)]^2}{E[(X - \mu_X)^2]E[(Y-\mu_Y)^2]} = \frac{\text{Cov}(X, Y)^2}{(Var X) \cdot (Var Y)} = \rho_{XY}^2 \leq 1\end{align}$
+
+-   $|\rho_{XY}| = 1 \Leftrightarrow Y = \beta_0 + \beta_1X$ for some $\beta_0, \beta_1 \in \mathbb R, \beta_1 \neq 0$ almost surely
+
+    ​
 
