@@ -30,11 +30,17 @@ Let $X_1, \cdots , X_n$ be a random sample of size $n$ from a distribution with 
 
 Since $\begin{align}\overline X = \frac 1 n \sum ^n _{k=1}X_k\end{align}$, then we see $\mu - E[\overline X] = \mu - \frac 1 n n \mu  = 0$, thus unbiased.
 
-#### Theorem: Sample Variance
+#### Theorem: Sample Average Variance
 
 Let $\overline X$ be the sample of a random sample of size $n$ from a distribution with mean $\mu$ and variance $\sigma ^2$. Then $Var \overline X = E[(\overline X - \mu)^2] = \frac 1 n \sigma ^2$
 
 Since $\begin{align}Var \overline X = Var (\frac 1 n \sum^n_{k=1}X_k) = \frac 1 {n^2}Var (\sum^n_{k=1}X_k)\end{align}$, then check `ve401_note_4`, we can see a fact that $Var(X+Y) = Var X + Var Y + \text{Cov}(X, Y)$, where $\text{Cov}(X, Y) = E[(X - \mu_X) (Y - \mu_Y)]$, then we get $\begin{align}Var \overline X = \frac 1 {n^2} n Var X = \frac 1 n \sigma ^2\end{align}$
 
 The standard deviation of $\overline X$ is given by $\sqrt{Var \overline X} = \sigma / \sqrt n$ and is called standard error of mean.
+
+### Theorem: Sample Variance
+
+Sample variance $\begin{align} S^2 = \frac 1 {n-1} \sum^n_{k=1} (X_k - \overline X)^2 \end{align}$ is an unbiased estimator for $\sigma^2$.
+
+$\begin{align} E[\frac 1 {n-1} \sum^n_{k=1} (X_K-\overline X)^2] &= \frac 1 {n-1}E[\sum^n_{k=1} (X_K-\mu + \mu -\overline X)^2] \\&= \frac 1 {n-1} E[\sum^n_{k=1} (X_k - \mu)^2 - 2(\overline X - \mu) (\sum^n_{k=1} X_k - n\mu) + n(\mu-\overline X)^2]\\&=\frac {1}{n-1}E[\sum^n_{k=1} (X_k - \mu)^2 - n(\mu-\overline X)^2 ] \\&=\frac 1 {n-1} (\sum^n_{k=1}E[(X_k-\mu)^2]- nE[(\mu-\overline X)^2]) = \frac 1{n-1} (\sum^n_{k=1} \sigma^2 - n\frac {\sigma^2}{n}) = \sigma^2 \end{align}$
 
