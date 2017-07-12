@@ -41,9 +41,7 @@ In order to guarantee that the random variables in a random sample are indeed in
 
 #### Four Main Properties
 
--   The number of categories should be suitable for the amount of data.
-
-    According to Sturges's rule.
+-   The number of categories should be suitable for the amount of data. According to Sturges's rule.
 
 -   Each datum should fall into exactly one category.
 
@@ -53,17 +51,34 @@ In order to guarantee that the random variables in a random sample are indeed in
 
 #### Histogram Creation Steps
 
--   The desired number of categories (Sturges's rule)
-
-    <img src="./ve401_note_pic/p247.png" alt="Drawing" style="width: 300px;"/>
+-   The desired number of categories (Sturges's rule) <img src="./ve401_note_pic/p247.png" alt="Drawing" style="width: 250px;"/>
 
 -   Calculate **data (sample) range**.
-
 -   Divide **data range** by number categories
-
-    Round up to the accuracy of the data or add a smallest decimal unit at accuracy of data.
-
+-   Round up to the accuracy of the data or add a smallest decimal unit at accuracy of data.
 -   The **lower boundary for first category** lies **1/2 smallest decimal unit below** smallest datum.
 
 ### Percentile and Quartiles
 
+-   **percentile**: $x\text{th}$ percentile is defined as the value $d_x$ of the data such that $x\%$ of the value of the data are less than or equal to $d_x$.
+-   **quartile**:
+    -   $25\%$ of the data are no greater than **first quartile** $q_1$.
+    -   $50\%$ of the data no greater than the **second quartile** $q_2$, equal to the medium $\tilde{x}$.
+    -   $75\%$ are no greater than the **third quartile** $q_3$.
+-   quartile calculate method
+    -   $n$ is even, then first quartile is the median of the smallest $n/2$ elements of the list.
+    -   $n$ is odd, then first quartile is the average of the median of the smallest $(n-1)/2$ and the median of the smallest $(n+1)/2$ elements of the list.
+    -   the third quartile can be derived in similar method.
+
+### Boxplot
+
+-   $q_1, \tilde{x}, q_3$ and **interquartile range** $iqr := q_3 - q_1$
+-   Inner fences: $f_1 = q_1 - \frac 3 2 iqr$, $f_3 = q_3 + \frac 3 2 iqr$
+-   Outer fences: $F_1 = q_1 - 3iqr$, $F_3 = q_3 + 3iqr$
+-   Adjacent values: $a_1 = \min\{xk : x_k \geq f_1\}$ and $a_3 = \max\{x_k : x_k \leq f_3\}$
+-   If the whisker lines are of different length, then the max or min is inside inner fences.
+-   Data point lying between inner and outer fences are **near outliers**, with $\circ$ to indicate.
+-   Data point lying outside outer fences are **far outliers**, with $*$ to indicate.
+-   If outlier seems to be from error in measurement or data collecting, it may be discarded from the data.
+-   If outlier seems to come from a random measurement, it is recommended that statistics are reported twice: with the outlier included and without the outlier.
+-   Of 100 random sample of a normally distributed population, it can be expected that 7 be outliers.
