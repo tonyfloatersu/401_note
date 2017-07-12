@@ -73,3 +73,47 @@ $\begin{align} E[\frac 1 {n-1} \sum^n_{k=1} (X_K-\overline X)^2] &= \frac 1 {n-1
 
 -   $X$ be a random variable with MGF $m_X = E[e^{Xt}]$.
 -   $Y = \alpha + \beta X$, then $m_Y(t) = E[e^{(\alpha + \beta X)t}] = e^{\alpha t}m_X(\beta t)$.
+
+<div style="page-break-after: always;"></div>
+
+### Two-Sided Confidence Intervals
+
+#### Definition
+
+$0 \leq \alpha \le 1$, a $100(1-\alpha)\%$ (two sided) confidence interval for a parameter $\theta$ is an interval $[L_1, L_2]$ such that $P[L_1 \leq \theta \leq L_2] = 1 - \alpha$.
+
+##### Remark 1
+
+The definition doesn't determine $L_1, L_2$ uniquely.
+
+##### Remark 2
+
+The population parameter $\theta$ is not random, but $L_1, L_2$ are random. Hence $[L_1, L_2]$ is random interval.
+
+### Interval Estimation for Mean
+
+-   random sample of size $n$ from a normal population
+-   unknown mean $\mu$ and known variance $\sigma^2$
+-   Sample yields point estimate $\overline X$ for $\mu$.
+-   We are interested in finding $L = L(\alpha)$ that we can state with $100(1-\alpha)\%$ confidence that $\mu = \overline X \pm L$.
+
+$z_{\alpha / 2}$ defined for $\alpha \in [0, 1]$ with $\begin{align}\alpha / 2 = P[Z \geq z_{\alpha / 2}] = \frac 1 {\sqrt{2\pi}} \int ^\infty_{z_{\alpha/2}} e^{-x^2 / 2}dx =\frac 1 {\sqrt{2\pi}} \int _{-\infty}^{-z_{\alpha/2}} e^{-x^2 / 2}dx \end{align}$
+
+Thus $\begin{align}1-\alpha = P[\overline X - L \leq \mu \leq \overline X + L] = P[\frac {\overline X - \mu - L}{\sigma / \sqrt n} \leq 0 \leq \frac {\overline X - \mu + L}{\sigma / \sqrt n}]\end{align}$ (the later P is standard normal distribution)
+
+Then we let $\begin{align}Z = \frac {\overline X - \mu}{\sigma / \sqrt n}\end{align}$
+
+$\begin{align} 1-\alpha &= P[Z - \frac L {\sigma/\sqrt n} \leq 0 \leq Z + \frac L {\sigma / \sqrt n} ] = P[- \frac L {\sigma/\sqrt n} \leq Z \leq \frac L {\sigma/\sqrt n} ]\\&=2P[0\leq Z \leq \frac L {\sigma/\sqrt n} ] = 1-2P[\frac L {\sigma/\sqrt n} \leq Z \leq \infty] \end{align}$
+
+This means $\begin{align}\frac L {\sigma / \sqrt n} = z_{\alpha / 2} \Leftrightarrow L = \frac {\sigma \cdot z_{\alpha / 2}}{\sqrt n} \end{align}$
+
+#### Theorem
+
+Let $X_1, \cdots, X_n$ be a random sample of size $n$ from a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+A $100(1-\alpha)\%$ confidence interval on $\mu$ is given by $\overline X \pm \frac {\sigma \cdot z_{\alpha / 2}}{\sqrt n}$
+
+<div style="page-break-after: always;"></div>
+
+### Central Limit Theorem
+
