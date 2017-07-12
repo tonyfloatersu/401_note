@@ -117,3 +117,32 @@ A $100(1-\alpha)\%$ confidence interval on $\mu$ is given by $\overline X \pm \f
 
 ### Central Limit Theorem
 
+#### Theorem: General Version
+
+-   Let $X_1, \cdots, X_n$ be independent random variables with arbitrary distributions.
+
+-   $E[X_j] = \mu_j$ and variance $Var X_j = \sigma _j^2$.
+
+-   Under some general conditions:
+
+    $\begin{align} Z_n = \frac {Y - \sum\mu_j}{\sqrt{\sum\sigma_j^2}} \end{align}$ is approximately standard-normally distributed as $n$ gets large.
+
+#### Theorem: Specified Version
+
+-   $E[X] = \mu$ and variance $\sigma^2$.
+-   Under some general conditions: $\begin{align} Z_n = \frac {\overline X - \mu}{\sigma / \sqrt n} \end{align}$ is approximately standard normal.
+
+#### Well-behave Judgement
+
+-   Well-behave: nearly symmetric densities that look close to that of a normal distribution
+
+    $n \geq 4$
+
+-   Reasonably behaved: no prominent mode, densities look like uniform densities
+
+    $n \geq 12$
+
+-   Ill behaved: much of the weight of the densities is in the tails, irregular appearance
+
+    $n \geq 100$
+
