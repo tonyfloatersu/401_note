@@ -44,3 +44,17 @@ Sample variance $\begin{align} S^2 = \frac 1 {n-1} \sum^n_{k=1} (X_k - \overline
 
 $\begin{align} E[\frac 1 {n-1} \sum^n_{k=1} (X_K-\overline X)^2] &= \frac 1 {n-1}E[\sum^n_{k=1} (X_K-\mu + \mu -\overline X)^2] \\&= \frac 1 {n-1} E[\sum^n_{k=1} (X_k - \mu)^2 - 2(\overline X - \mu) (\sum^n_{k=1} X_k - n\mu) + n(\mu-\overline X)^2]\\&=\frac {1}{n-1}E[\sum^n_{k=1} (X_k - \mu)^2 - n(\mu-\overline X)^2 ] \\&=\frac 1 {n-1} (\sum^n_{k=1}E[(X_k-\mu)^2]- nE[(\mu-\overline X)^2]) = \frac 1{n-1} (\sum^n_{k=1} \sigma^2 - n\frac {\sigma^2}{n}) = \sigma^2 \end{align}$
 
+### Finding Estimator: Method of Moments
+
+We have an unbiased estimator $\begin{align} M_k = \frac 1 n \sum^n_{i=1}X_i^k \end{align}$ for the $k^{th}$ moments $E[X^k]$ given random samples $X_1, \cdots, X_n$.
+
+The idea is then that population parameters $\theta_j$ can often be expressed in terms of moments of distribution. Replacing the moments in these expressions by their estimators for parameter $\theta_j$.
+
+Estimators obtained in this way are not necessarily unbiased.
+
+### Finding Estimator: Method of Maximum Likelihood
+
+-   Assume we have a random sample $x_1, \cdots ,x_n$ from the distribution of a random variable $X$ with density $f$ and parameter $\theta$.
+-   Define likelihood function by $\begin{align} L(\theta) = \prod^n_{i=1}f(x_i) \end{align}$.
+-   Find the $\theta$ by maximizing the $L(\theta)$.
+-   Replace $\theta$ with $\hat \theta$.
