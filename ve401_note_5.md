@@ -1,6 +1,6 @@
 # Introduction to Statistical Method
 
-## Descriptive Statics
+## Descriptive Statistics
 
 -   **population**: a large group of objects about which inferences are to be made.
 -   **sample**: a subset of the population
@@ -19,6 +19,8 @@ $X_1, \cdots, X_n$ are independent identically distributed random variables.
 In order to guarantee that the random variables in a random sample are indeed independently distributed, the size of random sample should be not exceed 5% of population.
 
 ### Sample Statistics
+
+A (sample) statistic is simply a random variable derived from a random sample.
 
 -   **sample range**: $\begin{align} \max_{1 \leq k \leq n} X_k - \min_{1 \leq k \leq n} X_k \end{align}$
 -   **sample mean**: $\begin{align} \overline{X} := \frac 1 n \sum ^n_{k=1} X_k \end{align}$
