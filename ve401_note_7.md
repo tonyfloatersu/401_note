@@ -180,7 +180,21 @@ The $\overline X \pm 1.96 S$ will not always cover $95\%$ of the population sinc
 
 $X$ is normally distributed random variable with $\overline X$ and $S^2$ from a sample of size $n$.
 
-$\exists K = K(n,\alpha, \delta)S$ covers at least $\delta \cdot 100\%$ of population with $(1-\alpha)\cdot 100\%$ confidence.
+$\exists K = K(n,\alpha, \delta)$ to have an interval $\overline X \pm K(n,\alpha,\delta)S$ covers at least $\delta \cdot 100\%$ of population with $(1-\alpha)\cdot 100\%$ confidence. So the $K$ is a two-sided tolerance limit.
 
-So the $K$ is a two-sided tolerance limit.
+#### Theorem: One-sided Tolerance Limits
+
+$X$ is normally distributed random variable with $\overline X$ and $S^2$ from a sample of size $n$.
+
+$\exists K = K(n,\alpha, \delta)$ to have interval $(-\infty, \overline X + KS)$ and $(\overline X - KS, \infty)$ covers at least $\delta \cdot 100\%$ of population with $(1-\alpha)\cdot 100\%$ confidence. So the $K$ is a one-sided tolerance limit.
+
+### Non-Parametric Tolerance Limits
+
+A method for finding a tolerance interval without regard to the distribution of the population.
+
+The probability of $\sigma\cdot 100\%$ of the population lying within the values of the sample is
+
+$1-\alpha = P[(X_{min}, X_{max}) \text{ covers at least $\delta \cdot 100\%$ of the population}] = 1 - n\delta^{n-1} + (n-1)\delta^n$
+
+Also there is a approximate formula $\begin{align} n\simeq \frac 1 2 + \frac {1+\delta}{1-\delta}\cdot \frac {\chi^2_{\alpha, 4}}{4} \end{align}$
 
