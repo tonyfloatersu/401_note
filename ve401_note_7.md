@@ -120,3 +120,13 @@ This means that the independence of $\overline X$ and $S^2$ is a characteristic 
 
 ### Interval Estimation of Variability
 
+We let $0 < \alpha < 1$ and we define $\chi_{1-\alpha / 2, n}^2 \leq \chi_{\alpha / 2, n}^2 \in \mathbb R$
+
+We use the previous theorem to find a confidential interval for the variance based on sample variance $S^2$.
+
+<img src="./ve401_note_pic/p325.png" alt="Drawing" style="width: 250px;"/>
+
+Thus we get $\begin{align}1-\alpha = P[\chi^2_{1-\alpha/2, n-1} \leq \frac {(n-1)S^2}{\sigma^2} \leq \chi^2_{\alpha/2, n-1}]\end{align}$
+
+Then $\begin{align}1-\alpha = P[\frac {(n-1)S^2}{\chi^2_{\alpha/2, n-1}} \leq \sigma^2 \leq \frac {(n-1)S^2}{\chi^2_{1-\alpha/2, n-1}}] \end{align}$, which is the $100(1-\alpha)\%$ confidence interval for $\sigma^2$.
+
