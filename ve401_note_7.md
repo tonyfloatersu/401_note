@@ -90,3 +90,24 @@ Thus the joint distribution: <img src="./ve401_note_pic/p319.png" alt="Drawing" 
 
 Apply back into the $y_n$, <img src="./ve401_note_pic/p320.png" alt="Drawing" style="width: 350px;"/>
 
+Then $\begin{align} f_{Y_1}(y_1) = (2\pi)^{-1/2}\sigma^{-1}e^{-\frac 1 {2\sigma^2}(y_1 - \sqrt n \mu)^2} \end{align}$ and $\begin{align} f_{Y_i}(y_i) = (2\pi)^{-1/2}\sigma^{-1}e^{-\frac 1 {2\sigma^2} y_i^2} \end{align}$ for $2 \leq i \leq n$.
+
+$f_{Y_1\dots Y_n}(y_1, \dots y_n) = f_{Y_1}(y_1)\cdot f_{Y_2}(y_2) \dots f_{Y_n}(y_n)$
+
+So $Y_1$ is normally distributed with mean $\sqrt n \mu$ and variance $\sigma^2$, while $Y_2 \dots Y_n$ are having mean 0 and variance $\sigma^2$.
+
+### Proof for Previous Theorem
+
+So $\overline X = n^{-1/2} Y_1$ and $\begin{align}(n-1)S^2 &= \sum^n_{k=1}(X_k - \overline X)^2 = \sum^n_{k=1}X_k^2 - 2\sum^n_{k=1}X_k\overline X + n\overline X^2\\& = \sum^n_{k=1}X_k^2 - n\overline X^2 = \sum^n_{k=1}Y_k^2 - Y_1 ^2= \sum^n_{k=2}Y_k^2\end{align}$
+
+Since $\overline X = n^{-1/2} Y_1$ and $\begin{align} f_{Y_1}(y_1) = (2\pi)^{-1/2}\sigma^{-1}e^{-\frac 1 {2\sigma^2}(y_1 - \sqrt n \mu)^2} \end{align}$, then according to the rule in `ve401 note 3 page 6` that we get $\begin{align}f_{\overline X}(x) = (2\pi)^{-1/2}\sigma^{-1}e^{-\frac 1 {2\sigma^2}(\sqrt n x - \sqrt n \mu)^2}\sqrt n \end{align}$
+
+So the $\overline X$ is normally distributed with mean $\mu$ and variance $\sigma^2 / n$.
+
+$(n-1)S^2 / \sigma^2 = \frac 1 {\sigma^2} \sum^n_{k=2}Y_k^2 = \sum^n_{k=2} (\frac {Y_k} \sigma)^2$ is a chi-squared distribution with $n-1$ freedom.
+
+### Independence of Sample Mean and Sample Variance in more General Form
+
+
+
+<div style="page-break-after: always;"></div>
