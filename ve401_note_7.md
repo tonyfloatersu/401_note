@@ -60,3 +60,33 @@ If variance $\sigma^2 = E[(X -\mu)^2]$ is unknown, then we must first see $S^2 =
 So we are using the random sample $X_1, \dots X_n$ to get $\overline X $ and $S^2$ at same time.
 
 So we are getting the joint distribution of $\overline X$ and $S^2$.
+
+#### Theorem
+
+##### Predicate
+
+-   $X_1, \dots X_n$ $n \geq 2$ be a random sample of size $n$.
+-   Normal distribution with $\mu$ and variance $\sigma^2$.
+
+##### Content
+
+-   The sample mean $\overline X$ is independent of the sample variance $S^2$.
+-   $\overline X$ is normally distributed with mean $\mu$ and $\sigma^2 / n$.
+-   $(n-1)S^2/\sigma^2$ is chi-squared distributed with $n-1$ degree of freedom.
+
+### Helmert Transformation
+
+The Helmert transformation is a very special kind of orthogonal transformation from a set of $n \geq 2$ normal random variables $X_1, \dots X_n$ to a new set of random variables $Y_1, \dots Y_n$.
+
+<img src="./ve401_note_pic/p317.png" alt="Drawing" style="width: 250px;"/>
+
+<img src="./ve401_note_pic/p318.png" alt="Drawing" style="width: 300px;"/>
+
+The matrix $A$ is orthonormal since $A^{-1} = A^T$. This implies $|\det A| = 1$.
+
+$\begin{align}\sum^n_{i=1}y_i^2 = \langle y,y \rangle = \langle Ax, Ax\rangle = (Ax)^T(Ax) = x^TA^TAx = \langle A^TAx, x\rangle = \langle x , x\rangle = \sum ^ n _{i=1} x_i^2 \end{align}$
+
+Thus the joint distribution: <img src="./ve401_note_pic/p319.png" alt="Drawing" style="width: 350px;"/>
+
+Apply back into the $y_n$, <img src="./ve401_note_pic/p320.png" alt="Drawing" style="width: 350px;"/>
+
