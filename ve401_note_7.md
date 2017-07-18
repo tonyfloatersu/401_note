@@ -171,3 +171,16 @@ The $100(1-\alpha)\%$ confidential interval on $\mu$ is given by $\overline X \p
 A tolerance interval determined from a sample of size $n$ consists of two numbers $L1, L2$, called tolerance limits.
 
 So it goes like $(1-\alpha) \cdot 100\%$ certainty at least $\delta \cdot 100 \%$ of population lies between $L1, L2$.
+
+Since we know the fact that $95\%$ of the population lies in the interval $\mu \pm 1.96\sigma$.
+
+The $\overline X \pm 1.96 S$ will not always cover $95\%$ of the population since it is a random interval.
+
+#### Theorem: Two-sided Tolerance Limits
+
+$X$ is normally distributed random variable with $\overline X$ and $S^2$ from a sample of size $n$.
+
+$\exists K = K(n,\alpha, \delta)S$ covers at least $\delta \cdot 100\%$ of population with $(1-\alpha)\cdot 100\%$ confidence.
+
+So the $K$ is a two-sided tolerance limit.
+
