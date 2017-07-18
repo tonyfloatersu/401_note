@@ -130,3 +130,44 @@ Thus we get $\begin{align}1-\alpha = P[\chi^2_{1-\alpha/2, n-1} \leq \frac {(n-1
 
 Then $\begin{align}1-\alpha = P[\frac {(n-1)S^2}{\chi^2_{\alpha/2, n-1}} \leq \sigma^2 \leq \frac {(n-1)S^2}{\chi^2_{1-\alpha/2, n-1}}] \end{align}$, which is the $100(1-\alpha)\%$ confidence interval for $\sigma^2$.
 
+### Interval Estimation for Mean in Variance Unknown
+
+If we know the variance, then $Z = \frac {\overline X - \mu}{\sigma / \sqrt n}$.
+
+Our main goal is to derive a general formula for a confidence interval on the mean when the value of $\sigma$ is not known and must be estimated.
+
+So we should know the distribution of $\frac {\overline X - \mu}{S / \sqrt n}$.
+
+### T-distribution
+
+-   $Z$ is a standard normal variable.
+-   $\chi^2_\gamma$ be an independent chi-squared random variable with $\gamma$ degree of freedom.
+-   $T_\gamma = \frac Z {\sqrt{\chi_\gamma^2/\gamma}}$ is a T-distribution with $\gamma$ degree of freedom.
+
+The density for a T distribution with $\gamma$ degrees of freedom is given by:
+
+$\begin{align} f_{T_\gamma}(t) = \frac {\Gamma((\gamma + 1)/ 2)}{\Gamma(\gamma / 2)\sqrt{\pi\gamma}} (1 + \frac {t^2}\gamma)^{-\frac {\gamma + 1}2} \end{align}$ check page 332 to 335
+
+So $X_1 \dots X_n$ be a random sample from a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+The random variable $T_{n-1} = \frac {\overline X - \mu}{S / \sqrt n}$ follows T distribution with $n-1$ degree of freedom.
+
+(Come from the $(\overline X - \mu) / (\sigma / \sqrt n)$ as standard normal and $(n-1)S^2 / \sigma^2$ as chi-squared with $n-1$ degree of freedom, put them into $T_\gamma$ )
+
+<div style="page-break-after: always;"></div>
+
+### Interval Estimation of Mean with Variance Unknown
+
+We define $t_{\alpha / 2, n} \geq 0$ by $\begin{align}\int^\infty_{t_{\alpha / 2, n}} f_{T_n}(t)dt = \alpha / 2 \end{align}$ <img src="./ve401_note_pic/p337.png" alt="Drawing" style="width: 250px;"/>
+
+#### Theorem
+
+$X_1, \dots X_n$ be a random sample of size $n$ from a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+The $100(1-\alpha)\%$ confidential interval on $\mu$ is given by $\overline X \pm t_{\alpha / 2, n-1}S / \sqrt n$
+
+### Tolerance Limits
+
+A tolerance interval determined from a sample of size $n$ consists of two numbers $L1, L2$, called tolerance limits.
+
+So it goes like $(1-\alpha) \cdot 100\%$ certainty at least $\delta \cdot 100 \%$ of population lies between $L1, L2$.
