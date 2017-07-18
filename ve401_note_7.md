@@ -108,6 +108,15 @@ $(n-1)S^2 / \sigma^2 = \frac 1 {\sigma^2} \sum^n_{k=2}Y_k^2 = \sum^n_{k=2} (\fra
 
 ### Independence of Sample Mean and Sample Variance in more General Form
 
+The converse result for the previous theorem is also true:
 
+$X_1 \dots X_n$, with $n \geq 2$ be independent identical distributed random variables.
+
+If $\overline X$ and $S^2$ are independent, then $X_k$ with $k=1\dots n$ follows normal distribution.
+
+This means that the independence of $\overline X$ and $S^2$ is a characteristic property of the normal distribution. If in a given situation we assume that $\overline X$ and $S^2$ are independently distributed we essentially assuming that the population is normally distributed.
 
 <div style="page-break-after: always;"></div>
+
+### Interval Estimation of Variability
+
