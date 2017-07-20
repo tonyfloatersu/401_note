@@ -63,3 +63,7 @@ If we are testing a hypothesis of the form $H_0: \theta = \theta_0$, we say we a
 
 <img src="./ve401_note_pic/p355.png" alt="Drawing" style="width: 300px;"/> The $P$ is twice the value of one-tailed test.
 
+<div style="page-break-after: always;"></div>
+
+### Does a Small P-Value Provide Evidence that H0 is False
+
