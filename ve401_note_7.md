@@ -197,4 +197,3 @@ The probability of $\sigma\cdot 100\%$ of the population lying within the values
 $1-\alpha = P[(X_{min}, X_{max}) \text{ covers at least $\delta \cdot 100\%$ of the population}] = 1 - n\delta^{n-1} + (n-1)\delta^n$
 
 Also there is a approximate formula $\begin{align} n\simeq \frac 1 2 + \frac {1+\delta}{1-\delta}\cdot \frac {\chi^2_{\alpha, 4}}{4} \end{align}$
-
