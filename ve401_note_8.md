@@ -103,11 +103,45 @@ Theoretically true, difficult to implement in practice.
 
 Mainly ignore the problems mentioned here or claim that they are not relevant in their specific research.
 
-### Is Reject H0 Trivial?
-
-
-
 <div style="page-break-after: always;"></div>
 
 ### Neyman-Pearson Decision Theory
+
+Two competing hypothesis: $H_0,H_1$.
+
+Seek to reject $H_0$ to accept $H_1$.
+
+-   $H_0$ is **null hypothesis**
+-   $H_1$ is **research hypothesis** or **alternative hypothesis**.
+
+So there are four possible outcomes of the decision-making process:
+
+-   We reject $H_0$ when $H_0$ is untrue.
+-   **Type I Error**: We reject $H_0$ even though $H_0$ is true.
+-   **Type II Error**: We fail to reject $H_0$ even though $H_0$ is untrue.
+-   We fail to reject $H_0$ when $H_0$ true.
+
+Type I and Type II error should be as small as possible.
+
+### Power, Type I & II Error Probabilities
+
+$\alpha = P[\text{Type I Error}] = P[\text{reject $H_0$ | $H_0$ true}] = P[\text{accept $H_1$ | $H_1$ false}]$
+
+$\beta = P[\text{Type II Error}] = P[\text{fail to reject $H_0$ | $H_0$ false}]$
+
+$\text{Power} = 1-\beta$
+
+The power shows how likely our experiment is successful.
+
+-   By requiring strong evidence before rejecting $H_0$ (a value of the test statistic that is very different from its null value), $\alpha$ can be made small.
+
+-   The range of values for the test statistic that causes us to reject $H_0$ is **critical region**.
+
+    We choose the critical region in such a way to make $\alpha$ small.
+
+-   The more evidence we require to reject $H_0$ (the smaller the critical region is), the harder it is to actually reject $H_0$ in the first place.
+
+    The power decreases with $\beta$ becomes larger.
+
+-   For given $H_0$ and $H_1$, $\beta$ can be controlled by increasing the sample size.
 
