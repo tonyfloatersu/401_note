@@ -67,3 +67,47 @@ If we are testing a hypothesis of the form $H_0: \theta = \theta_0$, we say we a
 
 ### Does a Small P-Value Provide Evidence that H0 is False
 
+Since we know the fact that the $P  = P[D|H_0]$, but some researcher want $P[H_0|D]$.
+
+We can derive the fact from the Bayes's theorem:
+
+$P[D| H_0] = P[D \cap H_0] / P[H_0]$, then we can derive $P[H_0 | D] = P[D \cap H_0]/P[D]$.
+
+$\begin{align}P[H_0|D] &= \frac {P[D\cap H_0]}{P[D]} = \frac {P[D| H_0]\cdot P[H_0]}{P[D]} = \frac{P[D| H_0]\cdot P[H_0]}{P[D|H_0] \cdot P[H_0] + P[D|\neg H_0]\cdot(1-P[H_0])}\\&=\frac{P[D| H_0]}{P[D|H_0] + P[D|\neg H_0]\cdot(\frac{1-P[H_0]}{P[H_0]})}\end{align}$
+
+### Is Hypothesis Testing Logical?
+
+Since we get the $P[H_0|D]$ representation, we can let it be close to 1 depending on $P[H_0]$.
+
+Hence, it is possible that: given $H_0$ and the data is very unlikely, but given the data $H_0$ is very likely.
+
+-   In the classic argument:
+
+    If $P$ then $Q$; not $Q$ therefore not $P$
+
+-   In hypothesis testing, we want to argue that
+
+    If $P$ then $Q$; $Q$ is unlikely therefore $P$ is unlikely
+
+    Actually this is wrong.
+
+### Bayesian & Frequentist Statistics
+
+#### Bayesian
+
+Claim to understand the **logical inconsistencies** and intend to compensate for them with **prior and posterior probability** distributions.
+
+Theoretically true, difficult to implement in practice.
+
+#### Frequentist
+
+Mainly ignore the problems mentioned here or claim that they are not relevant in their specific research.
+
+### Is Reject H0 Trivial?
+
+
+
+<div style="page-break-after: always;"></div>
+
+### Neyman-Pearson Decision Theory
+
