@@ -145,3 +145,37 @@ The power shows how likely our experiment is successful.
 
 -   For given $H_0$ and $H_1$, $\beta$ can be controlled by increasing the sample size.
 
+
+<div style="page-break-after: always;"></div>
+
+### Example of Neyman-Pearson Decision Theory
+
+The mean is supposed to be $\mu_0 = 40$ and the standard deviation is $\sigma = 2$.
+
+Two hypothesis $H_0: \mu = 40$, $H_1: |\mu-40| \geq 1$
+
+Then the sample size is $n = 25$.
+
+The probability of committing Type I Error is $\alpha \leq 5\%$. (derive from $H_0$ and $H_1$?)
+
+So we apply the test statistic $\begin{align}Z = \frac {\overline X - \mu_0}{\sigma / \sqrt n} \end{align}$ and let $-z_{\alpha / 2}\leq Z \leq z_{\alpha / 2}$ to get probability of $1-\alpha$ and $P[|Z| > z_{\alpha / 2}] = \alpha$.
+
+The $\begin{align} \Big|  \frac {\overline X - \mu_0}{\sigma / \sqrt n} \Big| \geq 1.96 \end{align}$ is the critical region, with this critical region there are $5\%$ of Type I Error.
+
+If the sample mean is $\overline x = 40.9$, then the test statistic is $z = 2.25 > 1.96$.
+
+### Type II Error
+
+$\begin{align}|Z| =\Big| \frac {\overline X - \mu_0}{\sigma / \sqrt n}\Big| \geq z_{\alpha / 2} = 2.575 \end{align}$ when $\alpha = 1\%$. So with $z = 2.25 < 2.575$, there is a Type II Error.
+
+Assume null hypothesis $H_0 : \mu = \mu_0$ and the true value is $\mu = \mu_0 + \delta, \delta \in \mathbb{R}\backslash \{0 \}$.
+
+$\begin{align}Z = \frac {\overline X - \mu_0}{\sigma / \sqrt n}\end{align}$ is the test statistic actually follows a normal distribution with unit variance and mean $\delta \sqrt n / \sigma$.
+
+Review that if $-z_{\alpha / 2}\leq Z \leq z_{\alpha / 2}$ then we cannot reject $H_0$, deriving the Type II Error.
+
+$\beta = P[|Z|\leq z_{\alpha  /2}]$
+
+### Remark
+
+In order for the statistical procedure to be valid, **a critical region must be fixed before any data obtained**.
