@@ -184,3 +184,7 @@ Given a critical region determined by $\alpha$, we can find a sample size $n$ so
 
 In order for the statistical procedure to be valid, **a critical region must be fixed before any data obtained**.
 
+<div style="page-break-after: always;"></div>
+
+### Operating Characteristic (OC) Curves
+
