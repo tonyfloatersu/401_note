@@ -176,6 +176,11 @@ Review that if $-z_{\alpha / 2}\leq Z \leq z_{\alpha / 2}$ then we cannot reject
 
 $\begin{align}\beta = P[|Z|\leq z_{\alpha  /2}] = \frac 1 {\sqrt {2\pi}} \int^{z_{\alpha/2}}_{-z_{\alpha / 2}} e^{-(t-\delta \sqrt n / \sigma)^2 / 2}dt \approx\frac 1 {\sqrt {2\pi}} \int^{z_{\alpha/2} - \delta \sqrt n / \sigma}_{-\infty} e^{-t^2/2}dt \end{align}$
 
+We donate $-z_{\beta} \approx z_{\alpha / 2} - \delta \sqrt n / \sigma$ or $n \approx \frac {(z_{\alpha / 2} + z_\beta)^2 \sigma^2}{\delta ^2}$
+
+Given a critical region determined by $\alpha$, we can find a sample size $n$ so that the probability of committing a Type II Error is $\beta$.
+
 ### Remark
 
 In order for the statistical procedure to be valid, **a critical region must be fixed before any data obtained**.
+
