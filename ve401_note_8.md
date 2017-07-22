@@ -174,7 +174,7 @@ $\begin{align}Z = \frac {\overline X - \mu_0}{\sigma / \sqrt n}\end{align}$ is t
 
 Review that if $-z_{\alpha / 2}\leq Z \leq z_{\alpha / 2}$ then we cannot reject $H_0$, deriving the Type II Error.
 
-$\beta = P[|Z|\leq z_{\alpha  /2}]$
+$\begin{align}\beta = P[|Z|\leq z_{\alpha  /2}] = \frac 1 {\sqrt {2\pi}} \int^{z_{\alpha/2}}_{-z_{\alpha / 2}} e^{-(t-\delta \sqrt n / \sigma)^2 / 2}dt \approx\frac 1 {\sqrt {2\pi}} \int^{z_{\alpha/2} - \delta \sqrt n / \sigma}_{-\infty} e^{-t^2/2}dt \end{align}$
 
 ### Remark
 
