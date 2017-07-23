@@ -224,5 +224,9 @@ Since $\beta(\mu_0) = 1-\alpha(\mu_0)$ and we have a $\alpha = \alpha(\mu)$ for 
 
 <img src="./ve401_note_pic/p386.png" alt="Drawing" style="width: 300px;"/>
 
-### Selecting Appropriate Hypotheses
+<div style="page-break-after: always;"></div>
+
+### Acceptance Sampling
+
+
 
