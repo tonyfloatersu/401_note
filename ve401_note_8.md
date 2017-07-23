@@ -212,3 +212,17 @@ where $d := \frac {|\mu - \mu_0|}\sigma$
 
 ### One-Tailed Tests
 
+The one tailed hypothesis of form $H_0 :\theta \leq \theta_0, H_1:\theta\geq \theta_1$ or $H_0:\theta\ge \theta_0, H_1:\theta\le \theta_1$ also has OC curve.
+
+The $\alpha = \alpha (\theta)$ depends on the actual value of $\theta$. $\alpha(\theta_0)$ gives an upper bound for all $\alpha(\theta)$.
+
+### OC for One-Sided Hypotheses
+
+One sided test with null hypothesis $H_0: \mu \le \mu_0, H_1: \mu > \mu_0 $ then we can only define $\beta(\mu)$ for $\mu > \mu_0$.
+
+Since $\beta(\mu_0) = 1-\alpha(\mu_0)$ and we have a $\alpha = \alpha(\mu)$ for $\mu \leq \mu_0$, we just use $\beta(\mu) = 1-\alpha(\mu)$ for $\mu \leq \mu_0$.
+
+<img src="./ve401_note_pic/p386.png" alt="Drawing" style="width: 300px;"/>
+
+### Selecting Appropriate Hypotheses
+
