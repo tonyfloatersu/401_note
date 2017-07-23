@@ -188,3 +188,27 @@ In order for the statistical procedure to be valid, **a critical region must be 
 
 ### Operating Characteristic (OC) Curves
 
+The previous probability of Type II Error is calculated directly. For distribution other than normal distribution with known variance is different. These probability are often provided as OC curves.
+
+According to **central limit theorem**, $\overline X$ follows a normal distribution with mean $\mu$.
+
+Through our **choice of critical region** and sample size, we can effectively fix $\alpha$.
+
+Depending on the true value of $\mu$, $\beta$ can be large or small.
+
+We represent $\beta$ as function of $\mu$ through a curve:<img src="./ve401_note_pic/p379.png" alt="Drawing" style="width: 300px;"/>
+
+$\beta(\mu) = P[\text{fail to reject $H_0$ | $\mu$}]$ and when $\mu \to \mu_0$ the $\beta(\mu)\to P[\text{fail to reject $H_0$ | $\mu=\mu_0$}] = 1-\alpha$
+
+Also, the $\beta$ depends on the sample size, a larger sample size reduces the variance of $\overline X$ and **make it less likely to reject $H_0$ if $\mu \neq \mu_0$**. <img src="./ve401_note_pic/p382.png" alt="Drawing" style="width: 200px;"/>
+
+### OC Curves for Normal Distribution
+
+The OC curve for $\alpha = 0.05$ to find $\beta$:  <img src="./ve401_note_pic/p383.png" alt="Drawing" style="width: 350px;"/>
+
+where $d := \frac {|\mu - \mu_0|}\sigma$
+
+<div style="page-break-after: always;"></div>
+
+### One-Tailed Tests
+
