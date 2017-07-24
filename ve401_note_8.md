@@ -293,3 +293,20 @@ Then fixes $\alpha$ we get the OC curve for producer's risk and consumer's risk.
 
 ### Null Hypothesis Significance Testing (NHST)
 
+-   Two hypotheses $H_0, H_1$ are setup, $H_1$ is always the logical negation of $H_0$
+-   Either a "hypothesis test" is performed, where a critical region for given  $\alpha$ is performed, test statistic is evaluated, $H_0$ is either rejected or accepted.
+-   Or test statistic is evaluated immediately, a P-value is found and $H_0$ is either rejected or accepted based on the value.
+-   Since $H_1$ is always $\neg H_0$, there is no meaningful discussion of $\beta$.
+
+### NHST Disadvantages
+
+-   A small P-value doesn't guarantee that a large probability that $H_0$ is false.
+-   Rejecting $H_0$ on $\alpha = 0.05$ or $0.01$ is just arbitrary
+-   NHST is actually biased against failing to reject $H_0$, based on a Bayesian point of view, $P[H_0]$ doesn't enter into NHST.
+-   The two-sided test like $H_0 : \theta = \theta_0$ and $H_1:\theta \ne \theta_0$ is meaningless
+-   The power of the test is nor properly defined.
+
+<div style="page-break-after: always;"></div>
+
+### T-Test
+
