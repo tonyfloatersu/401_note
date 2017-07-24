@@ -228,5 +228,68 @@ Since $\beta(\mu_0) = 1-\alpha(\mu_0)$ and we have a $\alpha = \alpha(\mu)$ for 
 
 ### Acceptance Sampling
 
+>   An important part of statistical quality control.
 
+Suppose a situation:
+
+-   A buyer receives a lot of items from a producer
+-   He needs to decide upon delivery whether or not to accept the lot
+-   It is impractical to test all items in the lot on whether they are acceptable
+-   A sample is tested, and each item in the sample categorized as **defective or acceptable**
+-   Based on the number of defective in the sample, a decision is made on whether or not accept.
+
+We denote the number of items in the lot by $N$.
+
+The true but unknown proportion of defectives is donated by $\Pi$.
+
+So we set $H_0: \Pi \le \Pi_0$ and $H_1:\Pi > \Pi_1$
+
+Usually, one defines an acceptance number $c$. If the number of defective items in sample exceeds $c$, reject. Choosing $c$ corresponds to setting a critical region for the test.
+
+Type I error corresponds to rejecting an acceptable lot, producer's risk $\alpha$.
+
+Type II error corresponds to failing to reject an unacceptable lot, consumer's risk $\beta$.
+
+#### Producer's Risk
+
+We can calculate $\alpha$ based on the $N$, $n$ and $\Pi_0$.
+
+Trivially, $r = N\Pi$, we select a sample of size $n$ from the lot and consider random variable $D$ as the number of defective items in the sample.
+
+$\begin{align}f_D(d) = P[D = d] = \frac {\binom r d \binom {N-r}{n-d}}{\binom N n} \end{align}$
+
+Then we can derive $\alpha = P[\text{reject $H_0$ | $\Pi \le \Pi_0$}] \le P[\text{reject $H_0$ | $\Pi = \Pi_0$}] = P[D > c | \Pi = \Pi_0]$
+
+Thus we get $\begin{align}\alpha = \sum_{d > c}f_D(d) \end{align}$
+
+We can apply Poisson or Binomial Approximation to this Hypergeometric distribution.
+
+#### Consumer's Risk
+
+Given the acceptance number $c$, we can calculate the probability of Type II Error.
+
+This depends on $\Pi$ and must be calculated for each value of  $\Pi$.
+
+$\beta = \beta(\Pi) \le P[\text{fail to reject $H_0$ | $\Pi = \frac r N > \Pi_0$}] = \sum_{d \leq c} f_D(d)$
+
+Then for different $\Pi$ we generate different $\beta$.
+
+<div style="page-break-after: always;"></div>
+
+Then fixes $\alpha$ we get the OC curve for producer's risk and consumer's risk.
+
+<img src="./ve401_note_pic/p395.png" alt="Drawing" style="width: 500px;"/>
+
+### Summary of Neyman-Pearson Decision Theory
+
+-   Select appropriate hypothesis $H_0, H_1$ and a test statistic
+-   Fix $\alpha$ and the critical region for test
+-   Choose a sample size and hence a desired power for test.
+-   Obtain the sample statistic and judge:
+    -   if it falls into critical region, reject $H_0$ at significance level $\alpha$
+    -   otherwise accept $H_0$
+
+<div style="page-break-after: always;"></div>
+
+### Null Hypothesis Significance Testing (NHST)
 
