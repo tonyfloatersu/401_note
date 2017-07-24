@@ -396,3 +396,17 @@ If there's $X_i - M_0 = 0$, then we can have two methods:
 
 ### Wilcoxon Signed Rank Test
 
+Let $X_1 .. X_n$ be a random sample of size $n$ from an arbitrary continuous distribution.
+
+Order $n$ absolute difference $|X_i - M|$ according to magnitude, so that $X_{R_i} - M_0$ is the $R_i$th smallest difference by modulus.
+
+Let $W_+ = \sum _{R_i > 0} R_i$ and $|W_-| = \sum_{R_i < 0} |R_i|$
+
+We reject at significance level $\alpha$
+
+-   $H_0: M\leq  M_0$ if $W_-$ is too small to have occurred by chance
+-   $H_0: M\geq M_0$ if $W_+$ is too small to have occurred by chance
+-   $H_0:M = M_0$ if $ W:= \min\{W_-,|W_+|\}$ is too small to have occurred by chance 
+
+$W$ is approximately normal with $E[W] = \frac 1 4 n (n+1)$ and $Var W = \frac 1 {24} n (n+1)(2n+1)$
+
