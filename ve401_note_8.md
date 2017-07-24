@@ -352,3 +352,47 @@ We reject at significance level $\alpha$:
 -   $H_0: \sigma \leq \sigma_0$ if $\chi^2_{n-1} > \chi^2_{\alpha, n-1}$
 -   $H_0:\sigma \geq \sigma_0$ if $\chi^2_{n-1} < \chi^2_{1-\alpha, n-1}$
 
+
+T-distribution can be used in the presence of **large sample sizes** for the **distribution of the sample mean** even if the **underlying distribution is non-normal**.
+
+It is **not possible** to approximate $\chi^2_{n-1}$ statistic in this way if distribution is non-normal regardless of sample size.
+
+#### Chi-Squared Test OC Curve 
+
+The abscissa parameter for OC curves for two-tailed chi-squared test is $\lambda = \frac \sigma  {\sigma_0}$
+
+<img src="./ve401_note_pic/p420.png" alt="Drawing" style="width: 500px;"/>
+
+<div style="page-break-after: always;"></div>
+
+### Sign Test for Median
+
+For the median $M$ of a random variable $X$, $P[X < M] = P[X > M] = 1/2$
+
+Sign test is a form of binomial test: each $X_k$ has $1/2$ of being larger or smaller than the median.
+
+So $H_0: M = M_0$ by counting the number of sample variables $X_k$ that are less or greater than $M_0$.
+
+Let $X_1 .. X_n$ be a random sample of size $n$ from an arbitrary continuous distribution.
+
+So $Q_+ = \#\{X_k: X_k - M_0 > 0\}$ and $Q_- = \#\{X_k:X_k - M_0 < 0\}$.
+
+We reject at significance level $\alpha$
+
+-   $H_0: M\leq  M_0$ if $Q_-$ is too small to have occurred by chance
+-   $H_0: M\geq M_0$ if $Q_+$ is too small to have occurred by chance
+-   $H_0:M = M_0$ if $Q := \min\{Q_-,Q_+\}$ is too small to have occurred by chance 
+
+The random variable $Q_+$ and $Q_-$ follow binomial distributions with parameters $n$ and $p=1/2$.
+
+The two-sided test is always a significance test: $Q := \min\{Q_-,Q_+\}$ is used and P-value is $2Q$.
+
+If there's $X_i - M_0 = 0$, then we can have two methods:
+
+-   Count the zeros in such a way least likely to result in rejection of $H_0$
+-   Discard all zeros if the number is small compared to sample size and reduce sample size accordingly.
+
+<div style="page-break-after: always;"></div>
+
+### Wilcoxon Signed Rank Test
+
