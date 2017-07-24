@@ -289,8 +289,6 @@ Then fixes $\alpha$ we get the OC curve for producer's risk and consumer's risk.
     -   if it falls into critical region, reject $H_0$ at significance level $\alpha$
     -   otherwise accept $H_0$
 
-<div style="page-break-after: always;"></div>
-
 ### Null Hypothesis Significance Testing (NHST)
 
 -   Two hypotheses $H_0, H_1$ are setup, $H_1$ is always the logical negation of $H_0$
@@ -309,4 +307,48 @@ Then fixes $\alpha$ we get the OC curve for producer's risk and consumer's risk.
 <div style="page-break-after: always;"></div>
 
 ### T-Test
+
+$X_1, ...X_n$ be random sample of size $n$ from a normal distribution.
+
+$\overline X$ donate the sample mean, $S^2$ the sample variance.
+
+$\mu$ be the unknown population mean and $\mu_0$ a null value for the mean.
+
+Then any test $H_0: \mu = \mu_0$ based on the statistic $T_{n-1} = \frac {\overline X - \mu_0}{S / \sqrt n}$ is T-test.
+
+We reject at significance level $\alpha$:
+
+-   $H_0: \mu = \mu_0$ if $|T_{n-1}| > t_{\alpha / 2, n-1}$
+-   $H_0: \mu \leq \mu_0$ if $T_{n-1} > t_{\alpha, n-1}$
+-   $H_0:\mu \geq \mu_0$ if $T_{n-1} < -t_{\alpha, n-1}$
+
+#### T-Test OC Curves
+
+The OC curves for T-test have a similar appearance to those for the normal distribution.
+
+The OC curves for T-distribution has $d = \frac{|\mu - \mu_0|}\sigma$ where $\sigma$ is the unknown standard deviation of the random variable.
+
+-   If available, we can use prior experiments to insert a rough estimate for $\sigma$
+-   We can express the difference $\delta = |\mu - \mu_0|$ relative to $\sigma$
+    -   presecribing $d=\delta / \sigma < 1$ for a small difference in the mean
+    -   $d = \delta / \sigma < 2$ for a moderately large difference
+-   Substitute the sample standard deviation $s$ for $\sigma$
+
+<div style="page-break-after: always;"></div>
+
+### Chi-Squared Test
+
+$X_1, ...X_n$ be random sample of size $n$ from a normal distribution.
+
+$\overline X$ donate the sample mean, $S^2$ the sample variance.
+
+$\sigma^2$ for unknown population variance and $\sigma^2_0$ a null value of variance.
+
+Then a test for the variance based on the statistic $\chi^2_{n-1} = \frac {(n-1)S^2}{\sigma^2_0}$ is called chi-squared test.
+
+We reject at significance level $\alpha$:
+
+-   $H_0 : \sigma = \sigma_0$ if $\chi^2_{n-1} > \chi^2_{\alpha / 2, n-1}$ or $\chi^2_{n-1} < \chi^2_{1-\alpha / 2, n-1}$
+-   $H_0: \sigma \leq \sigma_0$ if $\chi^2_{n-1} > \chi^2_{\alpha, n-1}$
+-   $H_0:\sigma \geq \sigma_0$ if $\chi^2_{n-1} < \chi^2_{1-\alpha, n-1}$
 
