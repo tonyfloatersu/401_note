@@ -101,3 +101,51 @@ The curves are for both one- two- sided alternatives.
 
 ### Comparing Two Means - Equal Variances
 
+$\begin{align}  \frac {\overline X_1 - \overline X_2 - (\mu_1 - \mu_2)} {\sqrt {\sigma_1^2/n_1 + \sigma^2_2 / n_2}} \end{align}$ follows standard normal distribution.
+
+We now want to estimate $\sigma^2$.
+
+The pooled estimator is $\begin{align} S_p^2 = \frac{(n_1 - 1)S_1^2 + (n_2-1)S^2_2}{n_1+n_2-2} \end{align}$
+
+$\begin{align}X_{n_1+n_2-2}^2 = \frac{(n+1+n_2-2)S_p^2}{\sigma^2} = \frac{(n_1-1)S_1^2}{\sigma^2} + \frac{(n_2-1)S_2^2}{\sigma^2}\end{align}$
+
+Furthermore, $\begin{align} T_{n_1+n_2-2} = \frac Z{\sqrt{X^2_{n_1+n_2-2} / (n_1+n_2-2)}} = \frac{(\overline X_1 - \overline X_2) - (\mu_1 - \mu_2)}{\sqrt{S^2_p(1/n_1+1/n_2)}} \end{align}$ follows T-distribution with $n_1 + n_2-2$ degree of freedom.
+
+So the $100(1-\alpha)\%$ confidence interval for $\mu _1 - \mu_2$ is $(\overline X_1 - \overline X_2) \pm t_{\alpha/2, n_1 + n_2-2}\sqrt{S_p^2(1/n_1+1/n_2)}$
+
+### Pooled T-Test - Variance Equal
+
+Let $X_1^{(i)}..X_{n_i}^{(i)}$, $i = 1,2$ be random samples of size $n_i$ from two normal distributions with means $\mu_i$ and identical $\sigma^2$.
+
+$S_p^2$ be the pooled sample variance and $(\mu_1 - \mu_2)_0$ a null value for difference of means.
+
+Then Test $H_0:\mu_1 - \mu_2 = (\mu_1  - \mu_2)_0$ based on $\begin{align} T_{n_1+n_2-2} =  \frac{(\overline X_1 - \overline X_2) - (\mu_1 - \mu_2)}{\sqrt{S^2_p(1/n_1+1/n_2)}} \end{align}$ is a pooled test for equality of means.
+
+We reject $H_0$ at significance level $\alpha$
+
+-   in favor of $H_1: \mu_1 - \mu_2 \neq (\mu_1 - \mu_2)_0$ if $|T_{n_1 + n_2 - 2} | > t_{\alpha / 2, n_1 + n_2 - 2}$
+-   in favor of $H_1: \mu_1 - \mu_2 > (\mu_1 - \mu_2)_0$ if $T_{n_1 + n_2 - 2} > t_{\alpha , n_1+n_2-2}$
+-   in favor of $H_1: \mu_1 - \mu_2 < (\mu_1 - \mu_2)_0$ if $T_{n_1 + n_2 - 2}  <- t_{\alpha , n_1+n_2-2}$
+
+### OC Curves T Test - Variance Equal
+
+Equal variance $\sigma^2$ and equal sample size $n_1 = n_2 = n$, $d = \frac {|\mu_1 - \mu_2|}{2\sigma}$, we must use the modified sample size $n^* = 2n-1$. The $\sigma$ can be substitute with an estimated one or express the deviation in terms of $\sigma$.
+
+<img src="./ve401_note_pic/p476.png" alt="Drawing" style="width: 175px;"/>
+
+<div style="page-break-after: always;"></div>
+
+### Unequal Variances
+
+$\begin{align}  \frac {\overline X_1 - \overline X_2 - (\mu_1 - \mu_2)} {\sqrt {\sigma_1^2/n_1 + \sigma^2_2 / n_2}} \end{align}$ for the unequal variance $\sigma_1$ and $\sigma_2$, we can estimate the variance to get the statistic $\begin{align} T_{\gamma} = \frac {(\overline X_1 - \overline X_2) - (\mu_1 - \mu_2)_0}{\sqrt{S^2_1/n_1 + S^2_2/n_2}} \end{align}$ where the $\gamma$ for the degree of freedom is $\begin{align}\gamma = \frac {(S_1^2 / n_1 + S_2^2/n_2)^2}{\frac{(S_1^2/n_1)^2}{n_1-1} + \frac{(S_2^2/n_2)^2}{n_2-1}} \end{align}$
+
+### Pooled T-Test - Variances Unequal
+
+We reject $H_0$ at significance level $\alpha$
+
+-   in favor of $H_1: \mu_1 - \mu_2 \ne (\mu_1 - \mu_2)_0$ if $|T_\gamma| > t_{\alpha/2,\gamma}$
+-   in favor of $H_1: \mu_1 - \mu_2 > (\mu_1 - \mu_2)_0$ if $T_\gamma > t_{\alpha,\gamma}$
+-   in favor of $H_1: \mu_1 - \mu_2 < (\mu_1 - \mu_2)_0$ if $T_\gamma  <-t_{\alpha,\gamma}$
+
+### Paired T-Test
+
