@@ -149,3 +149,32 @@ We reject $H_0$ at significance level $\alpha$
 
 ### Paired T-Test
 
+>   In some situations, we do not take independent samples from two different populations, but rather the samples are naturally related to each other.
+
+$X$ and $Y$ are two random variables, we define $D = X-Y$, then $\mu_D = E[D] = E[X-Y] = E[X]-E[Y] = \mu_X - \mu_Y$
+
+Then we can analyze $D$ using method for the mean of a single random variable.
+
+$H_0 : \mu_D = 0$ and $H_1:\mu_D < 0$, with $n$ for size, $\overline D$ and $s_D^2$, we derive test statistic $T = \frac {\overline D}{s_D / \sqrt n}$
+
+### Wilcoxon Rank - Sum Test
+
+>   If the sample sizes are small, the variances unequal, or the populations are not normally distributed, the T-tests may not yield good results.
+
+The Wilcoxon Rank-sum test ranks observed measurements by size and the sum of the ranks is used to decide whether to reject the null hypothesis.
+
+It assumes that two random variables $X$ and $Y$ the null hypothesis is that they follow same distribution:
+
+$H_0: P[X > Y] = 1/2$.
+
+Then it is assumed that they follow continuous distributions that differs only on location.
+
+$f_X(x) = f_Y(x + \delta)$ for all $x \in \mathbb{R}$
+
+Let $X$ and $Y$ be two random samples following the same continuous distribution but with possibly shifted location. Let $X_1, ..., X_m$ and $Y_1, ...,Y_n$, $m \leq n$ be random sample from $X$ and $Y$ and associated with rank $R_i$, $1 \le i \le m+n$ from smallest to largest.
+
+So hypothesis changed to $H_0: M_X = M_Y$ and $H_1 : M_X \ne M_Y$, the test is based on the statistic $W_m := \text{ sum of the ranks of } X_1, ...X_m$
+
+$E[W_m] = \frac 1 2 m (m+n+1)$ and $VarW_m = \frac {1}{12}mn(m+n+1)$
+
+The paired test, the Wilcoxon signed rank test can be applied to $D=X-Y$.
